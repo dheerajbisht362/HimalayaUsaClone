@@ -1,0 +1,19 @@
+
+.shop-submenu{
+    position:absolute;
+    top:00px;
+    list-style:"none";
+    width:"500px";
+    /* display:"none" */
+    /* text-align:"start" */
+
+}
+
+shop-submenu-clicked{
+  display:"none"
+}
+.shop-submenu{
+    display:"block";
+    width:"100%";
+    height:"100%"
+}
