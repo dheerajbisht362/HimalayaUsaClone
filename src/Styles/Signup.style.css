@@ -21,14 +21,14 @@
   margin: 0 auto;
 }
 .returnStore {
-  font-size: 1.597vw;
+  font-size: 0.9vw;
   line-height: 1.458vw;
-  color: #6c7592;
+  color: black;
   margin-top: 1.25vw;
   margin-bottom: 1.25vw;
 }
 .inputText {
-  border: 0;
+  border: 0.1px solid #777777;
   width: 100%;
   padding: 0.694vw;
 }
@@ -41,6 +41,12 @@
 .marginTop44 {
   margin-top: 3.056vw;
 }
-.loginMargin {
+.signupMargin {
   margin-top: 1.806vw;
+  font-weight: 500;
+}
+.btnGreen {
+  border: 0;
+  outline: 0;
+  color: white;
 }

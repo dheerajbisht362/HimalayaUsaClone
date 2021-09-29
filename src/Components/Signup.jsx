@@ -4,7 +4,7 @@ function Signup() {
   return (
     <div className="signup-container">
       <div className="pageHeading">Create an Account</div>
-      <div className="form-title loginMargin">Personal Information</div>
+      <div className="form-title signupMargin">Personal Information</div>
       <div className="bodyText">
         First Name <span className="floatRight">Required Fields</span>{" "}
       </div>
@@ -12,7 +12,7 @@ function Signup() {
       <div className="bodyText">Last Name </div>
       <input className="inputText" type="text" placeHolder="Enter Last Name" />
       <div className="bodyText">E-mail </div>
-      <input className="inputText" type="text" placeHolder="Enter Email" />
+      <input className="inputText" type="email" placeHolder="Enter Email" />
       <div className="bodyText">Password</div>
       <input
         type="password"
