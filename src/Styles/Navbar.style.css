@@ -1,0 +1,11 @@
+.navbar {
+	display: flex;
+	float: left;
+}
+.navlinks {
+	padding: 25px 15px;
+	margin: 0 20px;
+}
+.navIcon {
+	padding: 15px;
+}

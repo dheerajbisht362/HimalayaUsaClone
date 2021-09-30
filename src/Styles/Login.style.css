@@ -3,11 +3,15 @@
 	font-size: 2.431vw;
 	line-height: 3.611vw;
 }
+
 .bodyText {
 	font-size: 1.042vw;
 	line-height: 1.528vw;
 	color: #656363;
 	margin-top: 1.389vw;
+}
+.colBlack {
+	color: #000;
 }
 .floatRight {
 	float: right;
