@@ -1,42 +1,78 @@
-// import "../Styles/ProductView.style.css";
 import "../Styles/ProductView.style.css";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function ProductView() {
-	return (
+	const { id } = useParams();
+
+	const [product, setProducts] = useState({});
+	const [loading, setLoading] = useState(true);
+	const [frame, setFrame] = useState(1);
+
+	useEffect(() => {
+		showData();
+		setLoading(false);
+	}, []);
+	function showData() {
+		axios
+			.get(`http://localhost:3555/products/query/${id}`)
+			.then((res) => res.data[0])
+			.then((res) => setProducts(res));
+	}
+	const pic1 =
+		"https://cdn.shopify.com/s/files/1/0399/1728/9633/products/CurcuminComplete-1_1024x1024.png?v=1595306962";
+
+	const pic2 =
+		"https://cdn.shopify.com/s/files/1/0399/1728/9633/products/CurcuminComplete-2_1024x1024.png?v=1595306962";
+	return loading ? (
+		<div>...Loading</div>
+	) : product.name === undefined ? (
+		<div>404 NO PRODUCT FOUND</div>
+	) : (
 		<div className="proContainer">
 			<div className="flex1">
 				<div>
 					<img
 						width="521"
 						height="494"
-						src="https://via.placeholder.com/503"
+						src={
+							frame === 0
+								? pic1
+								: frame === 1
+								? product.image
+								: pic2
+						}
 						alt="Product"
 					/>
 				</div>
-				<div>
+				<div className="moreImages">
 					<img
 						width="88"
 						height="88"
-						src="https://via.placeholder.com/503"
+						onClick={() => setFrame(0)}
+						src={pic1}
 						alt="Product"
 					/>
 					<img
 						width="88"
 						height="88"
-						src="https://via.placeholder.com/503"
+						onClick={() => setFrame(1)}
+						src={product.image}
 						alt="Product"
 					/>
 					<img
 						width="88"
 						height="88"
-						src="https://via.placeholder.com/503"
+						onClick={() => setFrame(2)}
+						src={pic2}
 						alt="Product"
 					/>
 				</div>
 			</div>
 			<div>
-				<div className="pageHeading">Boswellia</div>
-				<div className="priceProduct">$14.95</div>
+				<div className="pageHeading">{product.name}</div>
+				<div className="priceProduct">{product.price}</div>
 				<div>Size: 60 Capsules</div>
 				<div>
 					{" "}
@@ -56,21 +92,28 @@ export default function ProductView() {
 					</button>{" "}
 				</div>
 				<div>Description</div>
+				<ul>
+					{product.description.map((el, i) => (
+						<li key={i}>{el}</li>
+					))}
+				</ul>
 				<div>Recommended Use</div>
 				<div>
 					<table>
-						<tr>
-							<td>Size(Caplets)</td>
-							<td>60</td>
-							<td>120</td>
-							<td>240</td>
-						</tr>
-						<tr>
-							<td>Supply</td>
-							<td>15 Days</td>
-							<td>1 Month</td>
-							<td>2 Months</td>
-						</tr>
+						<tbody>
+							<tr>
+								<td>Size(Caplets)</td>
+								<td>60</td>
+								<td>120</td>
+								<td>240</td>
+							</tr>
+							<tr>
+								<td>Supply</td>
+								<td>15 Days</td>
+								<td>1 Month</td>
+								<td>2 Months</td>
+							</tr>
+						</tbody>
 					</table>
 				</div>
 				<div>Adults take 2 capsules twice daily with food</div>

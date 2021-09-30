@@ -21,6 +21,14 @@
 	margin-right: 30px;
 	border: 0px;
 }
+.moreImages {
+	display: flex;
+	justify-content: center;
+}
+.moreImages > img {
+	margin: 10px;
+	margin-top: 48px;
+}
 .btnQuantity {
 	margin: 10px 20px;
 	background-color: white;
