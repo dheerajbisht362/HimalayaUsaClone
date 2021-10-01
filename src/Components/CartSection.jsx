@@ -30,7 +30,9 @@ export default function CartSection({ el, updateCart }) {
 					+
 				</button>
 			</div>
-			<div className="cartProTitle wid80 ">{el.price * counter} </div>
+			<div className="cartProTitle wid80 ">
+				{(el.price * counter).toFixed(2)}{" "}
+			</div>
 		</div>
 	);
 }

@@ -98,15 +98,18 @@ export default function PaymentPage() {
 			<div className="paymentCartSec">
 				<div>
 					{cart.map((el) => (
-						<div
-							key={el.id}
-							style={{ textAlign: "center", margin: "10px" }}
-						>
+						<div key={el.id} style={{ margin: "10px" }}>
 							<img widht="70" height="48" src={el.image} alt="" />{" "}
 							<span style={{ marginLeft: 50 }}>{el.name}</span>
-							<span style={{ marginLeft: 50 }}>
+							<span
+								style={{
+									marginLeft: 50,
+									paddingTop: 20,
+									float: "right",
+								}}
+							>
 								{" "}
-								$ {el.price * el.quantity}
+								$ {(el.price * el.quantity).toFixed(2)}
 							</span>
 						</div>
 					))}

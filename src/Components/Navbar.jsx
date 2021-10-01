@@ -18,7 +18,9 @@ export default function Navbar() {
 		<div>
 			<div className="navbar">
 				<div>
-					<img src={logo} alt="logo"></img>
+					<Link to="/">
+						<img src={logo} alt="logo"></img>
+					</Link>
 				</div>
 				<div className="navlinks">
 					<div className="nav__menu-item">
