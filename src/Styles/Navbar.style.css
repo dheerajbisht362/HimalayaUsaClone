@@ -26,11 +26,15 @@
 	color: #858585;
 }
 .nav__submenu {
-	position: absolute;
+	position:absolute;
+	left:0px;
+	top:60px;
+	border-top: 1px solid rgb(151, 151, 151);;
 	display: none;
 	background-color: white;
-	padding: 40px 205px 61px 0px;
+	padding: 0px 205px 61px 0px;
 	z-index: 3px;
+	width:100%;
 }
 .nav__submenu li {
 	list-style: none;

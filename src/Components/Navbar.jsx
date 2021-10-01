@@ -1,5 +1,6 @@
 import logo from "../Images/logoMain.png";
 import cart from "../Images/cart.png";
+import search from "../Images/searchIcon.svg";
 import profile from "../Images/profile.png";
 import "../Styles/Navbar.style.css";
 import { useState } from "react";
@@ -29,6 +30,12 @@ export default function Navbar() {
 				<div className="navlinks">Store Locator</div>
 			</div>
 			<div style={{ float: "right" }}>
+				<img
+					className="navIcon"
+					style={{ border: "1px solid red" }}
+					src={search}
+					alt="cart"
+				/>
 				<img
 					onClick={() => {
 						toggleDropdown();
