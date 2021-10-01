@@ -6,6 +6,7 @@ import ProductsIdPage from "./Pages/ProductsIdPage";
 import PaymentPage from "./Pages/PaymentPage";
 import { Route, Switch } from "react-router-dom";
 import AuthContext from "./Context/AuthContext";
+import HomePage from "./Pages/HomePage";
 
 function App() {
 	return (
@@ -13,7 +14,7 @@ function App() {
 			<div style={{ position: "relative", minHeight: "100vh" }}>
 				<Switch>
 					<Route exact path="/">
-						homepage{" "}
+						<HomePage />
 					</Route>
 					<Route path="/products">
 						{" "}
