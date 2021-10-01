@@ -6,7 +6,7 @@ import Footer from "../Components/Footer";
 
 export default function SupplementsCategory() {
 	const [products, setProducts] = useState([]);
-	const [sortAsc, setSortAsc] = useState(0);
+	const [sortAsc, setSortAsc] = useState(false);
 	const [sortName, setSortName] = useState(false);
 
 	useEffect(() => {
@@ -16,9 +16,7 @@ export default function SupplementsCategory() {
 		axios
 			.get("http://localhost:3555/products")
 			.then((res) => res.data)
-			.then((res) => {
-				// sortAsc===0?setProducts(res):sortAsc===1?setProducts(res.sort((a,b)=>a.price-b.price)):setProducts(res.sort((a,b)=>b.price-a.price))
-			});
+			.then((res) => setProducts(res));
 	}
 
 	return (
