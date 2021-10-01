@@ -2,6 +2,8 @@ import "../Styles/ProductView.style.css";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useContext } from "react";
+import { CartContext } from "../Context/CartContext";
 
 export default function ProductView() {
 	const { id } = useParams();
@@ -9,6 +11,10 @@ export default function ProductView() {
 	const [product, setProducts] = useState({});
 	const [loading, setLoading] = useState(true);
 	const [frame, setFrame] = useState(1);
+
+	const [counter, setCounter] = useState(1);
+
+	const { cart, updateCart } = useContext(CartContext);
 
 	useEffect(() => {
 		showData();
@@ -81,9 +87,28 @@ export default function ProductView() {
 					<button className="btnCapsule">240 Capsules</button>
 				</div>
 				<div>
-					<button className="btnQuantity">-</button>1
-					<button className="btnQuantity">+</button>
-					<button className="btnAddToCart">ADD TO CART</button>
+					<button
+						disabled={counter === 0}
+						onClick={() => setCounter((prev) => prev - 1)}
+						className="btnQuantity"
+					>
+						-
+					</button>
+					{counter}
+					<button
+						onClick={() => setCounter((prev) => prev + 1)}
+						className="btnQuantity"
+					>
+						+
+					</button>
+					<button
+						onClick={() => {
+							updateCart(product, counter);
+						}}
+						className="btnAddToCart"
+					>
+						ADD TO CART
+					</button>
 				</div>
 				<div>
 					{" "}

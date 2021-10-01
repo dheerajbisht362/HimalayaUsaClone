@@ -1,4 +1,8 @@
 import "../Styles/Footer.style.css";
+import { CgFacebook } from "react-icons/cg";
+import { FaTwitter } from "react-icons/fa";
+import { FiInstagram } from "react-icons/fi";
+import { AiFillYoutube } from "react-icons/ai";
 
 export default function Footer() {
 	return (
@@ -54,7 +58,10 @@ export default function Footer() {
 						By entering your email, you agree to our Terms &
 						Conditions and Privacy Policy.
 					</div>
-					<div className="footerHead">Follow Us: </div>
+					<div className="footerHead">
+						Follow Us: <CgFacebook /> <FaTwitter />
+						<FiInstagram /> <AiFillYoutube />{" "}
+					</div>
 				</div>
 			</div>
 			<div className="footerRights">

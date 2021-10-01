@@ -26,15 +26,15 @@
 	color: #858585;
 }
 .nav__submenu {
-	position:absolute;
-	left:0px;
-	top:60px;
-	border-top: 1px solid rgb(151, 151, 151);;
+	position: absolute;
+	left: 0px;
+	top: 60px;
+	border-top: 1px solid rgb(151, 151, 151);
 	display: none;
 	background-color: white;
 	padding: 0px 205px 61px 0px;
 	z-index: 3px;
-	width:100%;
+	width: 100%;
 }
 .nav__submenu li {
 	list-style: none;
@@ -43,6 +43,9 @@
 .subMenuDropDown > div {
 	margin: 20px 50px;
 	width: 150px;
+}
+.nav__menu-item {
+	padding-bottom: 10px;
 }
 .nav__menu-item:hover .nav__submenu {
 	display: block;
