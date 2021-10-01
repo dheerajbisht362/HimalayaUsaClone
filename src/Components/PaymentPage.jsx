@@ -115,7 +115,6 @@ export default function PaymentPage() {
 					))}
 				</div>
 				<hr />
-
 				<input type="text" placeholder="Discount code" />
 				<button>Apply</button>
 				<hr />

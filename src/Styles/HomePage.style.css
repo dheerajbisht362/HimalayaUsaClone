@@ -1,1 +1,33 @@
-
+.heroShopDiv {
+	position: absolute;
+	top: 210px;
+}
+.heroShopDiv > div {
+	margin-left: 185px;
+}
+.heroTitle {
+	background-color: #fff;
+	padding: 10px;
+	padding-left: 185px;
+	font-weight: 500;
+	font-size: 45px;
+	line-height: 67px;
+	color: #333333;
+	margin-bottom: 10px;
+}
+.heroSubText {
+	font-size: 17px;
+	line-height: 25px;
+	color: #333333;
+	margin-bottom: 10px;
+}
+.btnHero {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 21px;
+	color: #ffffff;
+	background: #48cab2;
+	padding: 14px 43px;
+	border: 0;
+	margin-top: 20px;
+}

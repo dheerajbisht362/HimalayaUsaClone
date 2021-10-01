@@ -9,7 +9,7 @@ export default function ProductCardDisplay({ product }) {
 			<Link to={`/product/${id}`}>
 				<img width="198" height="198" alt="product" src={image} />
 				<div className="productTileCard">{name}</div>
-				<button className="btnPrice">{price}</button>
+				<button className="btnPrice">$ {price}</button>
 			</Link>
 		</div>
 	);
