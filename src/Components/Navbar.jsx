@@ -26,8 +26,12 @@ export default function Navbar() {
 						<Submenu />
 					</div>
 				</div>
-				<div className="navlinks">About</div>
-				<div className="navlinks">Store Locator</div>
+				<div className="navlinks ">
+					<div> About</div>
+				</div>
+				<div className="navlinks">
+					<div>Store Locator</div>
+				</div>
 			</div>
 			<div style={{ float: "right" }}>
 				<img

@@ -1,16 +1,11 @@
-import heroImg from "../Images/heroImg.png"
-
+import heroImg from "../Images/heroImg.jpg";
 
 export function HeroComp() {
-    
-    return(
-        <>
-          <div style={{width:"100%",backgroundImage:`url(${heroImg})`,height:"400px" }}>
-          
-          
-          </div>
-          
-          
-        </>
-    )
-};
+	return (
+		<>
+			<div>
+				<img alt="" src={heroImg} width="100%" height="550px" />
+			</div>
+		</>
+	);
+}

@@ -13,10 +13,11 @@ export default function HomePage() {
 			<Navbar />
 			<HeroComp />
 			<Shopbycatg />
+			<div style={{ height: "100px" }}></div>
+			<BestSeller />
 			<Textplant />
 			<TextCardPrent />
 			<InstaReels />
-			<BestSeller />
 			<Footer />
 		</div>
 	);
