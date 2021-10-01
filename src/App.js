@@ -9,6 +9,7 @@ import AuthContext from "./Context/AuthContext";
 import CartContext from "./Context/CartContext";
 import HomePage from "./Pages/HomePage";
 import CardDetails from "./Pages/CardDetails";
+import Success from "./Pages/Success";
 
 function App() {
 	return (
@@ -34,6 +35,10 @@ function App() {
 						</Route>
 						<Route path="/user/payment">
 							<PaymentPage />{" "}
+						</Route>
+						<Route path="/user/success">
+							<Success />
+							{""}
 						</Route>
 						<Route path="/cart">
 							<CardDetails />{" "}

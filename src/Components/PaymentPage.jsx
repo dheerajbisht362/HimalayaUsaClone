@@ -17,10 +17,10 @@ export default function PaymentPage() {
 				<button className="btnPay black">G pay</button>
 				<hr />
 				<div className="paymentSubHead">Contact information</div>
-				<div className="accountInfoPay">
+				{/* <div className="accountInfoPay">
 					<div>Yoon Hoo (yaanhoo61@gamil.com) </div>
 					<div>Log Out</div>
-				</div>
+				</div> */}
 				<div>
 					<input type="checkbox" />
 					<span>Keep me up to data on news and offers</span>
