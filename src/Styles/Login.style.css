@@ -30,6 +30,16 @@
 	color: #6c7592;
 	margin-top: 1.25vw;
 }
+.btnGreen {
+	padding: 0.694vw 4.444vw;
+	width: 100%;
+	background: #a3b49b;
+	margin-top: 2.5vw;
+}
+.darkgreen {
+	background: #66765f;
+	margin-bottom: 20px;
+}
 .inputText {
 	border: 0;
 	width: 100%;
