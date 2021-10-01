@@ -54,7 +54,9 @@ export default function Navbar() {
 					</span>
 				) : null}
 
-				<img className="navIcon" src={cart} alt="cart" />
+				<Link to="/cart">
+					<img className="navIcon" src={cart} alt="cart" />
+				</Link>
 			</div>
 			<div style={{ clear: "both" }}></div>
 		</div>

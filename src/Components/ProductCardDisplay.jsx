@@ -6,9 +6,11 @@ export default function ProductCardDisplay({ product }) {
 
 	return (
 		<div style={{ margin: "20px" }}>
-			<img width="198" height="198" alt="product" src={image} />
-			<div className="productTileCard">{name}</div>
-			<button className="btnPrice">{price}</button>
+			<Link to={`/product/${id}`}>
+				<img width="198" height="198" alt="product" src={image} />
+				<div className="productTileCard">{name}</div>
+				<button className="btnPrice">{price}</button>
+			</Link>
 		</div>
 	);
 }
