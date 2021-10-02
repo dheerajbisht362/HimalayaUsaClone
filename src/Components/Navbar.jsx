@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import Submenu from "./Submenu";
 import { CartContext } from "../Context/CartContext";
 import { useContext } from "react";
-import { StoreLocator } from "../Pages/StoreLocator";
+// import { StoreLocator } from "../Pages/StoreLocator";
 export default function Navbar() {
 	const [account, setAccount] = useState(false);
 	const [val, setVal] = useState("");
@@ -217,7 +217,7 @@ export default function Navbar() {
 				<Link to="/cart">
 					{" "}
 					<img className="navIcon" src={cartImg} alt="cart" />
-					<div
+					{cart.length?<div
 						style={{
 							position: "absolute",
 							padding: "5px",
@@ -229,7 +229,8 @@ export default function Navbar() {
 						}}
 					>
 						{cart.length}
-					</div>
+					</div>:null}
+					
 				</Link>
 			</div>
 			<div style={{ clear: "both" }}></div>
