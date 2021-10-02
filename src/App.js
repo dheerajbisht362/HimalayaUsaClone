@@ -25,6 +25,7 @@ function App() {
 							{" "}
 							<Supplements />{" "}
 						</Route>
+						
 						<Route path="/product/:id">
 							<ProductsIdPage />{" "}
 						</Route>
