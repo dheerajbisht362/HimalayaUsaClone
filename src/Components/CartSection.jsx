@@ -1,12 +1,22 @@
 import { useState } from "react";
+import { RiDeleteBinLine } from "react-icons/ri";
 
-export default function CartSection({ el, updateCart }) {
+export default function CartSection({ el, updateCart, deleteItem }) {
 	const [counter, setCounter] = useState(el.quantity);
 
 	return (
 		<div style={{ display: "flex", justifyContent: "center" }}>
+			<div style={{ margin: 35 }}>
+				<RiDeleteBinLine
+					size="40px"
+					onClick={() => {
+						deleteItem(el.id);
+					}}
+				/>
+			</div>
+
 			<img width="198" height="136" src={el.image} alt="" />
-			<div className="cartProTitle">{el.name} </div>
+			<div className="cartProTitle width250 ">{el.name} </div>
 			<div className="cartProTitle">$ {el.price} </div>
 			<div className="cartProCounter">
 				<button

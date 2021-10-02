@@ -4,12 +4,14 @@ import axios from "axios";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import "../Styles/Products.style.css";
+import { useParams } from "react-router-dom";
 
 export default function SupplementsCategory() {
 	const [products, setProducts] = useState([]);
 	const [sortAsc, setSortAsc] = useState(false);
 	const [sortName, setSortName] = useState(false);
 
+	const { category } = useParams();
 	useEffect(() => {
 		fetchData();
 	}, [sortAsc, sortName]);
@@ -53,7 +55,7 @@ export default function SupplementsCategory() {
 	return (
 		<div>
 			<Navbar />
-			<div className="productPageTitle">Herbal Supplements</div>
+			<div className="productPageTitle">{category.toUpperCase()}</div>
 			<div className="textAlignProduct">
 				<button
 					style={{

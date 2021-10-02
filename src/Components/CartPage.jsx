@@ -5,7 +5,8 @@ import CartSection from "../Components/CartSection";
 import { Link } from "react-router-dom";
 
 export default function CartPage() {
-	const { cart, updateCart, totalCartValue } = useContext(CartContext);
+	const { cart, updateCart, totalCartValue, deleteItem } =
+		useContext(CartContext);
 
 	return (
 		<div style={{ minHeight: 300, textAlign: "center" }}>
@@ -14,7 +15,12 @@ export default function CartPage() {
 				<div className="cartEmpty">Cart is empty</div>
 			) : (
 				cart.map((el) => (
-					<CartSection key={el.id} el={el} updateCart={updateCart} />
+					<CartSection
+						key={el.id}
+						el={el}
+						updateCart={updateCart}
+						deleteItem={deleteItem}
+					/>
 				))
 			)}
 			<div className="proceedPayment">
