@@ -123,7 +123,7 @@ export default function Navbar() {
           </div>
         </div>
         <div className="navlinks">About</div>
-        <div className="navlinks">Store Locator</div>
+        <Link to="/StoreLocator"><div className="navlinks">Store Locator</div></Link>
       </div>
       <div style={{ float: "right" }}>
         <img

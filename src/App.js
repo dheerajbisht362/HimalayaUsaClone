@@ -8,6 +8,7 @@ import { Route, Switch } from "react-router-dom";
 import AuthContext from "./Context/AuthContext";
 import CartContext from "./Context/CartContext";
 import HomePage from "./Pages/HomePage";
+import { StoreLocator } from "./Pages/StoreLocator";
 import CardDetails from "./Pages/CardDetails";
 import Success from "./Pages/Success";
 
@@ -42,6 +43,9 @@ function App() {
 						</Route>
 						<Route path="/cart">
 							<CardDetails />{" "}
+						</Route>
+						<Route path="/StoreLocator">
+							<StoreLocator />
 						</Route>
 						<Route>404 Page Not found</Route>
 					</Switch>
