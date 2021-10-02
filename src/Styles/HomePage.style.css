@@ -1,11 +1,12 @@
 .heroShopDiv {
-	position: absolute;
+	position:absolute;
 	top: 210px;
 }
 .heroShopDiv > div {
 	margin-left: 185px;
 }
 .heroTitle {
+	
 	background-color: #fff;
 	padding: 10px;
 	padding-left: 185px;
@@ -16,6 +17,7 @@
 	margin-bottom: 10px;
 }
 .heroSubText {
+	/* position: absolute; */
 	font-size: 17px;
 	line-height: 25px;
 	color: #333333;

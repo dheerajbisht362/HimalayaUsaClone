@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import Submenu from "./Submenu";
 import { CartContext } from "../Context/CartContext";
 import { useContext } from "react";
-
+import { StoreLocator } from "../Pages/StoreLocator";
 export default function Navbar() {
 	const [account, setAccount] = useState(false);
 	const [val, setVal] = useState("");
@@ -177,7 +177,7 @@ export default function Navbar() {
 					</div>
 				</div>
 				<div className="navlinks">About</div>
-				<div className="navlinks">Store Locator</div>
+				<Link to ="/storeLoc"><div className="navlinks">Store Locator</div></Link>
 			</div>
 			<div style={{ float: "right" }}>
 				<img
