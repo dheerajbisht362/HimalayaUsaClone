@@ -34,7 +34,7 @@ export default function LogIn() {
 			})
 			.catch((err) => alert(err.message));
 	}
-	return auth == "" ? (
+	return auth === "" ? (
 		<div className="login-container">
 			<div className="pageHeading">Already Registered?</div>
 			<div className="form-title loginMargin">Login</div>

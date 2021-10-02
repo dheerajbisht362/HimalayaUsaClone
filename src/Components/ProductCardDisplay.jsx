@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { FaCartPlus } from "react-icons/fa";
 
 export default function ProductCardDisplay({ product }) {
-	const { image, name, price, id } = product;
+	const { image, name, price, id, type } = product;
 	const { updateCart } = useContext(CartContext);
 
 	return (
@@ -13,6 +13,7 @@ export default function ProductCardDisplay({ product }) {
 			<Link to={`/product/${id}`}>
 				<img width="198" height="198" alt="product" src={image} />
 				<div className="productTileCard">{name}</div>
+				<div className="productTileCard">({type})</div>
 			</Link>
 			<button
 				onClick={() => {
