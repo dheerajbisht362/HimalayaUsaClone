@@ -44,7 +44,7 @@ function App() {
 						<Route path="/cart">
 							<CardDetails />{" "}
 						</Route>
-						<Route path="/StoreLocator">
+						<Route path="/storeLoc">
 							<StoreLocator />
 						</Route>
 						<Route>404 Page Not found</Route>
