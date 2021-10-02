@@ -21,7 +21,7 @@ function App() {
 						<Route exact path="/">
 							<HomePage />
 						</Route>
-						<Route path="/products">
+						<Route path="/products/:category">
 							{" "}
 							<Supplements />{" "}
 						</Route>

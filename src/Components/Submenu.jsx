@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 export default function Submenu() {
 	return (
 		<div className="nav__submenu">
-			<div style={{ display: "flex" }} className="nav__submenu-item ">
+			<div
+				style={{ display: "flex", marginLeft: 140 }}
+				className="nav__submenu-item "
+			>
 				<div>
 					<div
 						className="subMenuDropDown"
@@ -12,12 +15,12 @@ export default function Submenu() {
 						<div>
 							<li class="navdropHead">Herbal Supplements</li>
 							<li>
-								<Link to="/products">
+								<Link to="/products/single%20herb%20supplements">
 									Single Herb Supplements
 								</Link>
 							</li>
 							<li>
-								<Link to="/products">
+								<Link to="/products/multi-ingredient%20supplements">
 									Multi-Ingredient Supplements
 								</Link>
 							</li>
@@ -25,22 +28,30 @@ export default function Submenu() {
 						<div>
 							<li class="navdropHead">Oral Care</li>
 							<li>
-								<Link to="/products">Adult Toothpaste</Link>
+								<Link to="/products/adult%20toothpaste">
+									Adult Toothpaste
+								</Link>
 							</li>
 							<li>
-								<Link to="/products">Kids Toothpaste</Link>
+								<Link to="/products/kids%20toothpaste">
+									Kids Toothpaste
+								</Link>
 							</li>
 						</div>
 						<div>
 							<li class="navdropHead">Personal Care</li>
 							<li>
-								<Link to="/products">Face Care</Link>
+								<Link to="/products/face%20care">
+									Face Care
+								</Link>
 							</li>
 							<li>
-								<Link to="/products">Cleansing Bars</Link>
+								<Link to="/products/cleansing%20bars">
+									Cleansing Bars
+								</Link>
 							</li>
 							<li>
-								<Link to="/products">Balm</Link>
+								<Link to="/products/balm">Balm</Link>
 							</li>
 						</div>
 					</div>
@@ -59,56 +70,82 @@ export default function Submenu() {
 					>
 						<div>
 							<li>
-								<Link to="/products">Blood Sugar</Link>
+								<Link to="/products/blood%20sugar">
+									Blood Sugar
+								</Link>
 							</li>
 							<li>
-								<Link to="/products">Brain & Cognitive</Link>
+								<Link to="/products/brain%20&%20cognitive">
+									Brain & Cognitive
+								</Link>
 							</li>
 							<li>
-								<Link to="/products">Digestion</Link>
+								<Link to="/products/digestion">Digestion</Link>
 							</li>
 							<li>
-								<Link to="/products">Energy & Vitality</Link>
+								<Link to="/products/energy%20vitality">
+									Energy & Vitality
+								</Link>
 							</li>
 							<li>
-								<Link to="/products">Hair, Skin & Nails</Link>
+								<Link to="/products/hair,%20skin%20&%20nails">
+									Hair, Skin & Nails
+								</Link>
 							</li>
 							<li>
-								<Link to="/products">Heart & Cardio</Link>
-							</li>
-						</div>
-						<div>
-							<li>
-								<Link to="/products">Immune Support</Link>
-							</li>
-							<li>
-								<Link to="/products">Join & Mobility</Link>
-							</li>
-							<li>
-								<Link to="/products">Liver & Cleanse</Link>
-							</li>
-							<li>
-								<Link to="/products">Men's Wellness</Link>
-							</li>
-							<li>
-								<Link to="/products">Respiratory</Link>
-							</li>
-							<li>
-								<Link to="/products">Sleep</Link>
+								<Link to="/products/heart%20&Cardio">
+									Heart & Cardio
+								</Link>
 							</li>
 						</div>
 						<div>
 							<li>
-								<Link to="/products">Stress & Mood</Link>
+								<Link to="/products/immune%20support">
+									Immune Support
+								</Link>
 							</li>
 							<li>
-								<Link to="/products">Urinary</Link>
+								<Link to="/products/join%20&%20mobility">
+									Join & Mobility
+								</Link>
 							</li>
 							<li>
-								<Link to="/products">Weight Management</Link>
+								<Link to="/products/liver%20cleanse">
+									Liver & Cleanse
+								</Link>
 							</li>
 							<li>
-								<Link to="/products">Women's Wellness</Link>
+								<Link to="/products/men's%20wellness">
+									Men's Wellness
+								</Link>
+							</li>
+							<li>
+								<Link to="/products/respiratory">
+									Respiratory
+								</Link>
+							</li>
+							<li>
+								<Link to="/products/sleep">Sleep</Link>
+							</li>
+						</div>
+						<div>
+							<li>
+								<Link to="/products/stress%20&%20mood">
+									Stress & Mood
+								</Link>
+							</li>
+							<li>
+								<Link to="/products/urinary">Urinary</Link>
+							</li>
+							<li>
+								<Link to="/products/weight%20management">
+									Weight Management
+								</Link>
+							</li>
+							<li>
+								<Link to="/products/women's%20wellness">
+									Women's Wellness
+								</Link>
 							</li>
 						</div>
 					</div>

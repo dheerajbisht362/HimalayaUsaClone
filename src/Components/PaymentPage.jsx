@@ -85,7 +85,7 @@ export default function PaymentPage() {
 						placeholder="Phone"
 					/>
 				</div>
-				<Link to="/products">
+				<Link to="/products/health%20supplements">
 					{" "}
 					<button className="btnPaymentGreen">
 						Continue to shipping
