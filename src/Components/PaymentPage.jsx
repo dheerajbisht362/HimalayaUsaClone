@@ -7,14 +7,31 @@ import { CartContext } from "../Context/CartContext";
 export default function PaymentPage() {
 	const { cart, totalCartValue } = useContext(CartContext);
 
+	function handlePayment() {}
+
 	return (
 		<div style={{ display: "flex", justifyContent: "center" }}>
 			<div className="paymentAddressSec">
 				<img src={logo} alt="logo"></img>
 				<div className="expressCheckout">Express checkout</div>
-				<button className="btnPay purple">Shop pay</button>
-				<button className="btnPay yellow">Amazon pay</button>
-				<button className="btnPay black">G pay</button>
+				<button
+					onClick={() => handlePayment()}
+					className="btnPay purple"
+				>
+					Shop pay
+				</button>
+				<button
+					onClick={() => handlePayment()}
+					className="btnPay yellow"
+				>
+					Amazon pay
+				</button>
+				<button
+					onClick={() => handlePayment()}
+					className="btnPay black"
+				>
+					G pay
+				</button>
 				<hr />
 				<div className="paymentSubHead">Contact information</div>
 				{/* <div className="accountInfoPay">
