@@ -34,16 +34,14 @@ export default function SupplementsCategory() {
 				// console.log(pageCount);
 				
 				if(bloodSugar && digestion){
-					res=res.filter(el=>{return el.type==="Digestion"||el.type==="Blood Sugar"});
-
-
+					res=res.filter(el=> el.type==="Digestion"||el.type==="Blood Sugar");
 					console.log(res);
 				}
-				if(bloodSugar){
+				else if(bloodSugar){
 					res = res.filter(el => el.type === "Blood Sugar");
 					console.log(res);
 				}
-				if(digestion){
+				else if(digestion){
 					res = res.filter(el => el.type === "Digestion");
 					console.log(res);
 				}
@@ -173,7 +171,7 @@ export default function SupplementsCategory() {
 				</div>
 			</div>
 			{showNext&& loading===false?
-			  (<div style={{display:"flex",width:"100%",marginBottom:"30px", justifyContent:"space-around"}}><button onClick={()=>{setPageCount(pageCount+1); console.log(pageCount)}} style={{backgroundColor:"gray", color:"blue",width:"95px",height:"30px",fontSize:"13px", fontWeight:"500"}}>Show more</button></div>):(null)
+			  (<div style={{display:"flex",width:"100%",marginBottom:"30px", justifyContent:"space-around"}}><button onClick={()=>{setPageCount(pageCount+1); console.log(pageCount)}} style={{backgroundColor:"white", color:"blue",width:"100px",height:"50px",fontSize:"15px", fontWeight:"500"}}>Show more</button></div>):(null)
 			}
 			
 			<Footer />
