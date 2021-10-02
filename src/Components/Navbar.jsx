@@ -172,7 +172,7 @@ export default function Navbar() {
 				</div>
 				<div className="navlinks">
 					<div className="nav__menu-item">
-						<Link to="/products/health%20supplements">Shop</Link>
+						<Link to="/products/health%20supplements" onClick={()=>{toggleDropdown()}}>Shop</Link>
 						<Submenu />
 					</div>
 				</div>

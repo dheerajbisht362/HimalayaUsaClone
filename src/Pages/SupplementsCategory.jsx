@@ -7,6 +7,7 @@ import "../Styles/Products.style.css";
 import { useParams } from "react-router-dom";
 
 export default function SupplementsCategory() {
+	const [pageCount, setPageCount]=useState(1);
 	const [products, setProducts] = useState([]);
 	const [sortAsc, setSortAsc] = useState(false);
 	const [sortName, setSortName] = useState(false);
@@ -14,12 +15,16 @@ export default function SupplementsCategory() {
 	const { category } = useParams();
 	useEffect(() => {
 		fetchData();
-	}, [sortAsc, sortName]);
+	}, [sortAsc, sortName, pageCount]);
 	function fetchData() {
 		axios
 			.get("http://localhost:3555/products")
 			.then((res) => res.data)
+			// .then((res) => res.length=pageCount*6)
 			.then((res) => {
+				console.log(res);
+				// console.log(pageCount);
+				res.length=pageCount*6;
 				return sortAsc === 1
 					? setProducts(res.sort((a, b) => a.price - b.price))
 					: sortAsc === 2
@@ -133,6 +138,10 @@ export default function SupplementsCategory() {
 					))}
 				</div>
 			</div>
+			{products.length<24?
+			  (<div style={{display:"flex",width:"100%",marginBottom:"30px", justifyContent:"space-around"}}><button onClick={()=>{setPageCount(pageCount+1); console.log(pageCount)}} style={{backgroundColor:"gray", color:"blue",width:"95px",height:"30px",fontSize:"13px", fontWeight:"500"}}>Show more</button></div>):(null)
+			}
+			
 			<Footer />
 		</div>
 	);
