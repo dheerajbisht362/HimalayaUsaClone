@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 import Submenu from "./Submenu";
 import { CartContext } from "../Context/CartContext";
 import { useContext } from "react";
-import { StoreLocator } from "../Pages/StoreLocator";
 import { AuthContext } from "../Context/AuthContext";
 
 export default function Navbar() {
@@ -176,7 +175,14 @@ export default function Navbar() {
 				</div>
 				<div className="navlinks">
 					<div className="nav__menu-item">
-						<Link to="/products/health%20supplements">Shop</Link>
+						<Link
+							to="/products/health%20supplements"
+							onClick={() => {
+								toggleDropdown();
+							}}
+						>
+							Shop
+						</Link>
 						<Submenu />
 					</div>
 				</div>
@@ -240,19 +246,21 @@ export default function Navbar() {
 				<Link to="/cart">
 					{" "}
 					<img className="navIcon" src={cartImg} alt="cart" />
-					<div
-						style={{
-							position: "absolute",
-							padding: "5px",
-							backgroundColor: "#000",
-							color: "#fff",
-							borderRadius: 10,
-							top: 10,
-							right: 6,
-						}}
-					>
-						{cart.length}
-					</div>
+					{cart.length ? (
+						<div
+							style={{
+								position: "absolute",
+								padding: "5px",
+								backgroundColor: "#000",
+								color: "#fff",
+								borderRadius: 10,
+								top: 10,
+								right: 6,
+							}}
+						>
+							{cart.length}
+						</div>
+					) : null}
 				</Link>
 			</div>
 			<div style={{ clear: "both" }}></div>

@@ -8,12 +8,7 @@ import { useHistory } from "react-router-dom";
 export default function CartPage() {
 	const { cart, updateCart, totalCartValue, deleteItem } =
 		useContext(CartContext);
-	let history = useHistory();
-	function handleSubmit() {
-		if (cart.length === 0) {
-			alert("Nothing in cart");
-		} else history.push("/user/payment");
-	}
+	const checkPrice = totalCartValue();
 	return (
 		<div style={{ minHeight: 300, textAlign: "center" }}>
 			<div className="cartHead">Shopping Cart</div>
@@ -31,12 +26,19 @@ export default function CartPage() {
 			)}
 			<div className="proceedPayment">
 				<div>Grand Total : ${totalCartValue()}</div>
-				<button
-					onClick={() => handleSubmit()}
-					className="proceedPayButton"
-				>
-					PROCEED TO CHECKOUT
-				</button>
+				{checkPrice > 0 ? (
+					<Link to="/user/payment">
+						<button className="proceedPayButton">
+							PROCEED TO CHECKOUT
+						</button>
+					</Link>
+				) : (
+					<Link to="/products/:category">
+						<button className="proceedPayButton">
+							Go To Shopping Page
+						</button>
+					</Link>
+				)}
 			</div>
 		</div>
 	);
