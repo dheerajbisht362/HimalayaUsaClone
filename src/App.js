@@ -11,6 +11,7 @@ import HomePage from "./Pages/HomePage";
 import { StoreLocator } from "./Pages/StoreLocator";
 import CardDetails from "./Pages/CardDetails";
 import Success from "./Pages/Success";
+import UserAccount from "./Pages/UserAccount";
 
 function App() {
 	return (
@@ -25,7 +26,7 @@ function App() {
 							{" "}
 							<Supplements />{" "}
 						</Route>
-						
+
 						<Route path="/product/:id">
 							<ProductsIdPage />{" "}
 						</Route>
@@ -47,6 +48,9 @@ function App() {
 						</Route>
 						<Route path="/storeLoc">
 							<StoreLocator />
+						</Route>
+						<Route path="/user/account">
+							<UserAccount />
 						</Route>
 						<Route>404 Page Not found</Route>
 					</Switch>
