@@ -57,3 +57,18 @@
 .loginMargin {
 	margin-top: 1.806vw;
 }
+.alreadyLoggedIn {
+	text-align: center;
+	font-size: 30px;
+	margin: 20px;
+}
+.alreadyLoggedIn button {
+	background: #a3b49b;
+	padding: 10px 40px;
+	color: #fff;
+	margin: 20px;
+}
+
+.alreadyLoggedIn button:hover {
+	background: #66765f;
+}

@@ -3,14 +3,14 @@ import { useState, createContext } from "react";
 export const AuthContext = createContext({ auth: false, toggleAuth: () => {} });
 
 export default function AuthContextProvider({ children }) {
-	const [auth, setAuth] = useState(false);
+	const [auth, setAuth] = useState("");
 
-	const toggleAuth = () => {
-		setAuth(!auth);
+	const putAuth = (a) => {
+		setAuth(a);
 	};
 
 	return (
-		<AuthContext.Provider value={{ auth, toggleAuth }}>
+		<AuthContext.Provider value={{ auth, putAuth }}>
 			{children}
 		</AuthContext.Provider>
 	);

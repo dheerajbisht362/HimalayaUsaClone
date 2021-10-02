@@ -11,10 +11,14 @@ import Submenu from "./Submenu";
 import { CartContext } from "../Context/CartContext";
 import { useContext } from "react";
 import { StoreLocator } from "../Pages/StoreLocator";
+import { AuthContext } from "../Context/AuthContext";
+
 export default function Navbar() {
 	const [account, setAccount] = useState(false);
 	const [val, setVal] = useState("");
 	const [navSearch, setNavSearch] = useState([]);
+
+	const { auth, putAuth } = useContext(AuthContext);
 
 	const { cart } = useContext(CartContext);
 	function fetchSearchtext() {
@@ -177,7 +181,9 @@ export default function Navbar() {
 					</div>
 				</div>
 				<div className="navlinks">About</div>
-				<Link to ="/storeLoc"><div className="navlinks">Store Locator</div></Link>
+				<Link to="/storeLoc">
+					<div className="navlinks">Store Locator</div>
+				</Link>
 			</div>
 			<div style={{ float: "right" }}>
 				<img
@@ -197,7 +203,7 @@ export default function Navbar() {
 					src={profile}
 					alt="profile"
 				/>
-				{account ? (
+				{!account ? null : auth === "" ? (
 					<span className="NavDropDown">
 						<Link to="/user/login">
 							{" "}
@@ -212,7 +218,24 @@ export default function Navbar() {
 							<div>Checkout</div>
 						</Link>{" "}
 					</span>
-				) : null}
+				) : (
+					<span className="NavDropDown">
+						<Link to="/user/account">
+							{" "}
+							<div>Account</div>
+						</Link>{" "}
+						<div
+							className="signOutBtnDrop"
+							onClick={() => putAuth("")}
+						>
+							Log Out
+						</div>
+						<Link to="/user/payment">
+							{" "}
+							<div>Checkout</div>
+						</Link>{" "}
+					</span>
+				)}
 
 				<Link to="/cart">
 					{" "}

@@ -1,6 +1,8 @@
 import "../Styles/Login.style.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthContext";
 
 export default function LogIn() {
 	const [formData, setFormData] = useState({});
@@ -8,6 +10,7 @@ export default function LogIn() {
 		const { name, value } = e.target;
 		setFormData({ ...formData, [name]: value });
 	}
+	const { auth, putAuth } = useContext(AuthContext);
 
 	function handleSubmit() {
 		if (formData.email === undefined || formData.password === undefined)
@@ -24,11 +27,14 @@ export default function LogIn() {
 			.then((res) => {
 				// if (res === undefined) return alert("Invalid Credentials");
 				if (res.error) alert(res.error.message);
-				else alert("Success");
+				else {
+					putAuth(res.id);
+					alert("Success");
+				}
 			})
 			.catch((err) => alert(err.message));
 	}
-	return (
+	return auth == "" ? (
 		<div className="login-container">
 			<div className="pageHeading">Already Registered?</div>
 			<div className="form-title loginMargin">Login</div>
@@ -69,6 +75,18 @@ export default function LogIn() {
 					CREATE AN ACCOUNT
 				</button>
 			</Link>
+		</div>
+	) : (
+		<div className="alreadyLoggedIn">
+			<div>
+				Already Logged In
+				<button onClick={() => putAuth("")}>Sign Out</button>
+			</div>
+			<div>
+				<Link to="/products/multi-ingredient%20supplements">
+					<button>Products Page</button>
+				</Link>
+			</div>
 		</div>
 	);
 }

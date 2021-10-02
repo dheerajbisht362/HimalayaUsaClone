@@ -1,10 +1,14 @@
 import "../Styles/Signup.style.css";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthContext";
+import { Link } from "react-router-dom";
 
 export default function Signup() {
 	const [formData, setFormData] = useState({});
 	const history = useHistory();
+	const { auth, putAuth } = useContext(AuthContext);
 
 	function handleFormData(e) {
 		const { name, value } = e.target;
@@ -34,7 +38,7 @@ export default function Signup() {
 			})
 			.catch((err) => alert("Error"));
 	}
-	return (
+	return auth === "" ? (
 		<div className="signup-container">
 			<div className="pageHeading">Create an Account</div>
 			<div className="form-title signupMargin">Personal Information</div>
@@ -86,6 +90,18 @@ export default function Signup() {
 				CREATE
 			</button>
 			<div className="returnStore">or Return to Store</div>
+		</div>
+	) : (
+		<div className="alreadyLoggedIn">
+			<div>
+				Already Signed In
+				<button onClick={() => putAuth("")}>Sign Out</button>
+			</div>
+			<div>
+				<Link to="/products/multi-ingredient%20supplements">
+					<button>Products Page</button>
+				</Link>
+			</div>
 		</div>
 	);
 }
