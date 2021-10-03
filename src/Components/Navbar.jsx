@@ -219,7 +219,7 @@ export default function Navbar() {
 							{" "}
 							<div>Register</div>
 						</Link>
-						<Link>
+						<Link to="/cart">
 							{" "}
 							<div>Checkout</div>
 						</Link>{" "}
@@ -236,7 +236,7 @@ export default function Navbar() {
 						>
 							Log Out
 						</div>
-						<Link to="/user/payment">
+						<Link to="/cart">
 							{" "}
 							<div>Checkout</div>
 						</Link>{" "}
