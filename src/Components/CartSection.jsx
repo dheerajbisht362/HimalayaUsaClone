@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { RiDeleteBinLine } from "react-icons/ri";
 
-export default function CartSection({ el, updateCart, deleteItem }) {
+export default function CartSection({ el,setCartQty , deleteItem }) {
 	const [counter, setCounter] = useState(el.quantity);
 
 	return (
@@ -23,7 +23,7 @@ export default function CartSection({ el, updateCart, deleteItem }) {
 					disabled={counter === 0}
 					onClick={() => {
 						setCounter((prev) => prev - 1);
-						updateCart(el, counter);
+						setCartQty(el, counter);
 					}}
 					className="btnQuantity"
 				>
@@ -33,7 +33,7 @@ export default function CartSection({ el, updateCart, deleteItem }) {
 				<button
 					onClick={() => {
 						setCounter((prev) => prev + 1);
-						updateCart(el, counter);
+						setCartQty(el, counter);
 					}}
 					className="btnQuantity"
 				>
