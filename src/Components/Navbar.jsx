@@ -193,11 +193,11 @@ export default function Navbar() {
 			</div>
 			<div style={{ float: "right" }}>
 				<img
+					style={{ position: "relative", bottom: "7px" }}
 					className="navIcon"
 					onClick={() => {
 						showSearch();
 					}}
-					style={{ border: "1px solid red" }}
 					src={search}
 					alt="cart"
 				/>

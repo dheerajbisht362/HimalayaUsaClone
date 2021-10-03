@@ -19,6 +19,30 @@ export default function UserAccount() {
 			.then((res) => res.data)
 			.then((res) => setUser(res));
 	}
+	function showCart(obj) {
+		return Object.keys(obj).map(function (key) {
+			return (
+				<div>
+					{key}-{obj[key]}
+				</div>
+			);
+		});
+	}
+	// function showCart(obj) {
+	// 	console.log("obj:", obj);
+	// 	let res = "";
+	// 	for (let key in obj) {
+	// 		let str = key;
+	// 		res += (
+	// 			<div>
+	// 				{/* {console.log((key, obj[key]))} */}
+	// 				{{ str }} - {obj[key]} {console.log("str:", str)}
+	// 			</div>
+	// 		);
+	// 	}
+	// 	console.log(res);
+	// 	return res;
+	// }
 
 	return auth === "" ? (
 		<div>User Not Logged In</div>
@@ -31,10 +55,10 @@ export default function UserAccount() {
 					<div className="caSubText">My Account</div>
 					<div className="caSubtitle">Order History</div>
 					<div>
-						{user.order_ids.length === 0 ? (
+						{user.order_ids === undefined ? (
 							<div>You have not placed any order yet</div>
 						) : (
-							<div>{/* {user.order_ids[0]} */}</div>
+							<div>{showCart(user.order_ids[0])}</div>
 						)}
 					</div>
 

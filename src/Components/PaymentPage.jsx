@@ -12,7 +12,7 @@ export default function PaymentPage() {
 	const history = useHistory();
 	function handlePayment() {
 		const orderData = {};
-		cart.forEach((el) => (orderData[el.id] = el.quantity));
+		cart.forEach((el) => (orderData[el.name] = el.quantity));
 		const obj = {
 			order_ids: [orderData],
 		};

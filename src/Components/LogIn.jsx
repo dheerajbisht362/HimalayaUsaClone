@@ -26,6 +26,7 @@ export default function LogIn() {
 			})
 			.then((res) => {
 				// if (res === undefined) return alert("Invalid Credentials");
+				console.log(res);
 				if (res.error) alert(res.error.message);
 				else {
 					putAuth(res._id);
