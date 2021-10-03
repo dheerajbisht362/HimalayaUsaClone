@@ -44,7 +44,7 @@ export default function CartPage() {
 						PROCEED TO CHECKOUT
 					</button>
 				) : (
-					<Link to="/products/:category">
+					<Link to="/products/category">
 						<button className="proceedPayButton">
 							Go To Shopping Page
 						</button>
