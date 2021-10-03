@@ -1,20 +1,54 @@
 import "../Styles/PaymentPage.style.css";
 import logo from "../Images/logoMain.png";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
+import { AuthContext } from "../Context/AuthContext";
+import axios from "axios";
 
 export default function PaymentPage() {
-	const { cart, totalCartValue } = useContext(CartContext);
+	const { cart, totalCartValue, emptyCart } = useContext(CartContext);
+	const { auth } = useContext(AuthContext);
+	const history = useHistory();
+	function handlePayment() {
+		const orderData = {};
+		cart.forEach((el) => (orderData[el.id] = el.quantity));
+		const obj = {
+			order_ids: [orderData],
+		};
+
+		axios
+			.patch(`http://localhost:3555/users/purchase/${auth}`, obj)
+			.then((res) => res.data)
+			.then((res) => console.log(res))
+			.then(emptyCart())
+			.then(history.push("/user/success"))
+			.catch((err) => console.error(err.message));
+	}
 
 	return (
 		<div style={{ display: "flex", justifyContent: "center" }}>
 			<div className="paymentAddressSec">
 				<img src={logo} alt="logo"></img>
 				<div className="expressCheckout">Express checkout</div>
-				<button className="btnPay purple">Shop pay</button>
-				<button className="btnPay yellow">Amazon pay</button>
-				<button className="btnPay black">G pay</button>
+				<button
+					onClick={() => handlePayment()}
+					className="btnPay purple"
+				>
+					Shop pay
+				</button>
+				<button
+					onClick={() => handlePayment()}
+					className="btnPay yellow"
+				>
+					Amazon pay
+				</button>
+				<button
+					onClick={() => handlePayment()}
+					className="btnPay black"
+				>
+					G pay
+				</button>
 				<hr />
 				<div className="paymentSubHead">Contact information</div>
 				{/* <div className="accountInfoPay">

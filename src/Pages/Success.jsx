@@ -13,7 +13,7 @@ export default function SuccessPage() {
 					width="800"
 				/>
 				<div>
-					<Link to="/products">
+					<Link to="/products/Supplements">
 						<button
 							style={{
 								background: "#a3b49b",
