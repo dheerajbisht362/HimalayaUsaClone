@@ -24,7 +24,9 @@ export default function Navbar() {
 		try {
 			if (val.length) {
 				axios
-					.get(`http://localhost:3555/products/pro/${val}`)
+					.get(
+						`https://himalaya-usa.herokuapp.com/products/pro/${val}`
+					)
 					.then((res) => res.data)
 					.then((res) => {
 						setNavSearch(res);

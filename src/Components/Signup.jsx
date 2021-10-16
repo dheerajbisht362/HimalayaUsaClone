@@ -23,7 +23,7 @@ export default function Signup() {
 		)
 			return alert("Please enter all the details");
 
-		fetch("http://localhost:3555/users/", {
+		fetch("https://himalaya-usa.herokuapp.com/users/", {
 			method: "POST",
 			body: JSON.stringify(formData),
 			headers: { "Content-Type": "application/json" },

@@ -9,12 +9,15 @@ function BestSeller() {
 
 	const bestSell = async () => {
 		try {
-			const data = await axios.get("http://localhost:3555/products/", {
-				params: {
-					_page: 1,
-					_limit: 4,
-				},
-			});
+			const data = await axios.get(
+				"https://himalaya-usa.herokuapp.com/products/",
+				{
+					params: {
+						_page: 1,
+						_limit: 4,
+					},
+				}
+			);
 			const resp = await data.data;
 			console.log(resp);
 		} catch (e) {

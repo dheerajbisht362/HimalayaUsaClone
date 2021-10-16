@@ -7,55 +7,52 @@ import "../Styles/Products.style.css";
 import { useParams } from "react-router-dom";
 
 export default function SupplementsCategory() {
-	const [pageCount, setPageCount]=useState(1);
+	const [pageCount, setPageCount] = useState(1);
 	const [products, setProducts] = useState([]);
 	const [sortAsc, setSortAsc] = useState(false);
 	const [sortName, setSortName] = useState(false);
 	const [loading, setLoading] = useState(true);
-	const [bloodSugar,setBloodSugar]=useState(false);
-	const [digestion,setDigestion]=useState(false);
-	const [showNext,setShowNext]=useState(true);
+	const [bloodSugar, setBloodSugar] = useState(false);
+	const [digestion, setDigestion] = useState(false);
+	const [showNext, setShowNext] = useState(true);
 
 	const { category } = useParams();
 	useEffect(() => {
 		setTimeout(() => {
 			fetchData();
 		}, 1000);
-		
 	}, [sortAsc, sortName, pageCount, bloodSugar, digestion]);
 	function fetchData() {
 		axios
-			.get("http://localhost:3555/products")
+			.get("https://himalaya-usa.herokuapp.com/products")
 			.then((res) => res.data)
 			// .then((res) => res.length=pageCount*6)
 			.then((res) => {
 				setLoading(false);
 				console.log(res);
 				// console.log(pageCount);
-				
-				if(bloodSugar && digestion){
-					res=res.filter(el=> el.type==="Digestion"||el.type==="Blood Sugar");
+
+				if (bloodSugar && digestion) {
+					res = res.filter(
+						(el) =>
+							el.type === "Digestion" || el.type === "Blood Sugar"
+					);
 					console.log(res);
-				}
-				else if(bloodSugar){
-					res = res.filter(el => el.type === "Blood Sugar");
+				} else if (bloodSugar) {
+					res = res.filter((el) => el.type === "Blood Sugar");
 					console.log(res);
-				}
-				else if(digestion){
-					res = res.filter(el => el.type === "Digestion");
+				} else if (digestion) {
+					res = res.filter((el) => el.type === "Digestion");
 					console.log(res);
 				}
 
+				if (res.length > pageCount * 6) {
+					res.length = pageCount * 6;
+					setShowNext(true);
+				} else {
+					setShowNext(false);
+				}
 
-				if(res.length>pageCount*6)
-				{
-					res.length=pageCount*6;
-					setShowNext(true)
-				}
-				else{
-					setShowNext(false)
-				}
-				
 				return sortAsc === 1
 					? setProducts(res.sort((a, b) => a.price - b.price))
 					: sortAsc === 2
@@ -142,9 +139,25 @@ export default function SupplementsCategory() {
 				<div style={{ width: "270px" }}>
 					<ul className="categoryLeftSec">
 						<li className="active">Health Interests</li>
-						<li style={{fontWeight:bloodSugar?"900":"normal"}} onClick={()=>{setBloodSugar(!bloodSugar)}}>Blood Sugar</li>
+						<li
+							style={{
+								fontWeight: bloodSugar ? "900" : "normal",
+							}}
+							onClick={() => {
+								setBloodSugar(!bloodSugar);
+							}}
+						>
+							Blood Sugar
+						</li>
 						<li>Brain & Cognitive</li>
-						<li style={{fontWeight:digestion?"900":"normal"}} onClick={()=>{setDigestion(!digestion)}}>Digestion </li>
+						<li
+							style={{ fontWeight: digestion ? "900" : "normal" }}
+							onClick={() => {
+								setDigestion(!digestion);
+							}}
+						>
+							Digestion{" "}
+						</li>
 						<li>Energy & Vitality</li>
 						<li>Respiratory</li>
 						<hr />
@@ -164,16 +177,50 @@ export default function SupplementsCategory() {
 						width: "952px",
 					}}
 				>
-				{loading?<div style={{paddingLeft:"50%",paddingTop:"20px", fontSize:"25px"}}>Loading...</div>:null}
+					{loading ? (
+						<div
+							style={{
+								paddingLeft: "50%",
+								paddingTop: "20px",
+								fontSize: "25px",
+							}}
+						>
+							Loading...
+						</div>
+					) : null}
 					{products.map((el) => (
 						<ProductCardDisplay key={el.id} product={el} />
 					))}
 				</div>
 			</div>
-			{showNext&& loading===false?
-			  (<div style={{display:"flex",width:"100%",marginBottom:"30px", justifyContent:"space-around"}}><button onClick={()=>{setPageCount(pageCount+1); console.log(pageCount)}} style={{backgroundColor:"white", color:"blue",width:"100px",height:"50px",fontSize:"15px", fontWeight:"500"}}>Show more</button></div>):(null)
-			}
-			
+			{showNext && loading === false ? (
+				<div
+					style={{
+						display: "flex",
+						width: "100%",
+						marginBottom: "30px",
+						justifyContent: "space-around",
+					}}
+				>
+					<button
+						onClick={() => {
+							setPageCount(pageCount + 1);
+							console.log(pageCount);
+						}}
+						style={{
+							backgroundColor: "white",
+							color: "blue",
+							width: "100px",
+							height: "50px",
+							fontSize: "15px",
+							fontWeight: "500",
+						}}
+					>
+						Show more
+					</button>
+				</div>
+			) : null}
+
 			<Footer />
 		</div>
 	);

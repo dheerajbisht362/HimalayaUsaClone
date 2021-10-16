@@ -22,7 +22,7 @@ export default function ProductView() {
 	}, []);
 	function showData() {
 		axios
-			.get(`http://localhost:3555/products/query/${id}`)
+			.get(`https://himalaya-usa.herokuapp.com/products/query/${id}`)
 			.then((res) => res.data[0])
 			.then((res) => setProducts(res));
 	}

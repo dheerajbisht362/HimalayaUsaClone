@@ -18,7 +18,10 @@ export default function PaymentPage() {
 		};
 
 		axios
-			.patch(`http://localhost:3555/users/purchase/${auth}`, obj)
+			.patch(
+				`https://himalaya-usa.herokuapp.com/users/purchase/${auth}`,
+				obj
+			)
 			.then((res) => res.data)
 			.then((res) => console.log(res))
 			.then(emptyCart())

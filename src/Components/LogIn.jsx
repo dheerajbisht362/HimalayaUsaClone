@@ -16,7 +16,7 @@ export default function LogIn() {
 		if (formData.email === undefined || formData.password === undefined)
 			return alert("Please enter all the details");
 
-		fetch("http://localhost:3555/users/login", {
+		fetch("https://himalaya-usa.herokuapp.com/users/login", {
 			method: "POST",
 			body: JSON.stringify(formData),
 			headers: { "Content-Type": "application/json" },
