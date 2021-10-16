@@ -12,9 +12,9 @@ export default function HomePage() {
 		<div style={{ position: "relative", minHeight: "100vh" }}>
 			<Navbar />
 			<HeroComp />
-			<Shopbycatg />
-			<div style={{ height: "100px" }}></div>
 			<BestSeller />
+			
+			<Shopbycatg />
 			<Textplant />
 			<TextCardPrent />
 			<InstaReels />

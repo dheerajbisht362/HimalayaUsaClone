@@ -1,5 +1,6 @@
 import { CartContext } from "../Context/CartContext";
 import { useContext } from "react";
+import { useEffect} from "react";
 import "../Styles/CartPage.style.css";
 import CartSection from "../Components/CartSection";
 import { Link } from "react-router-dom";
@@ -7,11 +8,15 @@ import { useHistory } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
 
 export default function CartPage() {
-	const { cart, updateCart, totalCartValue, deleteItem } =
+	const { cart, totalCartValue, deleteItem , setCartQty} =
 		useContext(CartContext);
 	const checkPrice = totalCartValue();
 	const { auth } = useContext(AuthContext);
 	const history = useHistory();
+	useEffect(()=>{
+		totalCartValue()
+	},[cart])
+		
 
 	const handlePaymentPage = () => {
 		auth === ""
@@ -29,7 +34,7 @@ export default function CartPage() {
 					<CartSection
 						key={el.id}
 						el={el}
-						updateCart={updateCart}
+						setCartQty={setCartQty}
 						deleteItem={deleteItem}
 					/>
 				))
