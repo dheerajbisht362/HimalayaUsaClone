@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.css"; //CSss
 import Supplements from "./Pages/SupplementsCategory";
 import LogInPage from "./Pages/LoginPage";
 import SignUpPage from "./Pages/SignUpPage";
