@@ -1,16 +1,31 @@
 import "../Styles/PaymentPage.style.css";
 import logo from "../Images/logoMain.png";
 import { Link, useHistory } from "react-router-dom";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { CartContext } from "../Context/CartContext";
 import { AuthContext } from "../Context/AuthContext";
 import axios from "axios";
+import TextField from "@mui/material/TextField";
 
 export default function PaymentPage() {
 	const { cart, totalCartValue, emptyCart } = useContext(CartContext);
+	const [formData, setFormData] = useState({});
 	const { auth } = useContext(AuthContext);
 	const history = useHistory();
 	function handlePayment() {
+		if (formData.address === undefined || formData.address.trim() === "")
+			return alert("Enter valid address");
+		if (formData.city === undefined || formData.city.trim() === "")
+			return alert("Enter valid city");
+		if (formData.country === undefined || formData.country.trim() === "")
+			return alert("Enter valid country");
+		if (formData.state === undefined || formData.state.trim() === "")
+			return alert("Enter valid state");
+		if (formData.zip === undefined || formData.zip.trim() === "")
+			return alert("Enter valid zip code");
+		if (formData.phone === undefined || formData.phone.trim() === "")
+			return alert("Enter valid phone number");
+
 		const orderData = {};
 		cart.forEach((el) => (orderData[el.name] = el.quantity));
 		const obj = {
@@ -27,6 +42,10 @@ export default function PaymentPage() {
 			.then(emptyCart())
 			.then(history.push("/user/success"))
 			.catch((err) => console.error(err.message));
+	}
+	function handleChange(e) {
+		const { name, value } = e.target;
+		setFormData({ ...formData, [name]: value });
 	}
 
 	return (
@@ -54,74 +73,106 @@ export default function PaymentPage() {
 				</button>
 				<hr />
 				<div className="paymentSubHead">Contact information</div>
-				{/* <div className="accountInfoPay">
-					<div>Yoon Hoo (yaanhoo61@gamil.com) </div>
-					<div>Log Out</div>
-				</div> */}
 				<div>
 					<input type="checkbox" />
 					<span>Keep me up to data on news and offers</span>
 				</div>
 
 				<div className="paymentSubHead">Shipping address</div>
-				<div style={{ display: "flex" }}>
-					<div className="borderInput">
-						First Name (optional)
-						<input className="inputForm" type="text" />
+				<form>
+					<div className="borderInput" style={{ display: "flex" }}>
+						<TextField
+							id="outlined-basic"
+							label="First Name (optional)"
+							variant="outlined"
+							className="inputForm"
+							name="firstName"
+							onChange={(e) => handleChange(e)}
+						/>
+						<TextField
+							id="outlined-basic"
+							label="Last Name"
+							variant="outlined"
+							className="inputForm "
+							type="text"
+							name="lastName"
+							onChange={(e) => handleChange(e)}
+						/>
 					</div>
 					<div className="borderInput">
-						Last Name
-						<input className="inputForm" type="text" />
-					</div>
-				</div>
-				<div className="borderInput">
-					<input
-						className="inputForm"
-						type="text"
-						placeholder="Address"
-					/>
-				</div>
-				<div className="borderInput">
-					<input
-						className="inputForm"
-						type="text"
-						placeholder="Apartment, suite, etc. (optional)"
-					/>
-				</div>
-				<div className="borderInput">
-					<input
-						className="inputForm"
-						type="text"
-						placeholder="City"
-					/>
-				</div>
-				<div style={{ display: "flex" }}>
-					<div className="borderInput">
-						Country/region
-						<div>
-							<input className="inputForm threeDiv" type="text" />
-						</div>
+						<TextField
+							id="outlined-basic"
+							label="Address"
+							variant="outlined"
+							className="inputForm"
+							type="text"
+							name="address"
+							onChange={(e) => handleChange(e)}
+						/>
 					</div>
 					<div className="borderInput">
-						State
-						<div>
-							<input className="inputForm threeDiv" type="text" />
-						</div>
+						<TextField
+							id="outlined-basic"
+							label="Apartment, suite, etc. (optional)"
+							variant="outlined"
+							className="inputForm"
+							type="text"
+							name="apartment"
+							onChange={(e) => handleChange(e)}
+						/>
 					</div>
 					<div className="borderInput">
-						ZIP code
-						<div>
-							<input className="inputForm threeDiv" type="text" />
-						</div>
+						<TextField
+							id="outlined-basic"
+							label="City"
+							variant="outlined"
+							className="inputForm"
+							type="text"
+							name="city"
+							onChange={(e) => handleChange(e)}
+						/>
 					</div>
-				</div>
-				<div className="borderInput">
-					<input
-						type="text"
-						className="inputForm"
-						placeholder="Phone"
-					/>
-				</div>
+					<div className="borderInput" style={{ display: "flex" }}>
+						<TextField
+							id="outlined-basic"
+							label="Country/region"
+							variant="outlined"
+							className="inputForm"
+							type="text"
+							name="country"
+							onChange={(e) => handleChange(e)}
+						/>
+						<TextField
+							id="outlined-basic"
+							label="State"
+							variant="outlined"
+							className="inputForm"
+							type="text"
+							name="state"
+							onChange={(e) => handleChange(e)}
+						/>
+						<TextField
+							id="outlined-basic"
+							label="ZIP code"
+							variant="outlined"
+							className="inputForm"
+							type="number"
+							name="zip"
+							onChange={(e) => handleChange(e)}
+						/>
+					</div>
+					<div className="borderInput">
+						<TextField
+							id="outlined-basic"
+							label="Phone"
+							variant="outlined"
+							type="number"
+							className="inputForm"
+							name="phone"
+							onChange={(e) => handleChange(e)}
+						/>
+					</div>
+				</form>
 				<Link to="/products/health%20supplements">
 					{" "}
 					<button className="btnPaymentGreen">

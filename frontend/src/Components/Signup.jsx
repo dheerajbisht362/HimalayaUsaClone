@@ -22,6 +22,13 @@ export default function Signup() {
 			formData.password === undefined
 		)
 			return alert("Please enter all the details");
+		if (
+			formData.first_name.trim() === "" ||
+			formData.last_name.trim() === "" ||
+			formData.email.trim() === "" ||
+			formData.password.trim() === ""
+		)
+			return alert("Please enter valid the details");
 
 		fetch("https://himalaya-usa.herokuapp.com/users/", {
 			method: "POST",

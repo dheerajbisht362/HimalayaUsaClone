@@ -69,7 +69,9 @@ export default function UserAccount() {
 							<div>E-Mail</div>
 						</div>
 						<div className="caQueryRes">
-							<div>{user.first_name + " " + user.last_name}</div>
+							<div>
+								"{user.first_name + " " + user.last_name}"
+							</div>
 							<div>{user.email}</div>
 						</div>
 					</div>

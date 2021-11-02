@@ -15,6 +15,8 @@ export default function LogIn() {
 	function handleSubmit() {
 		if (formData.email === undefined || formData.password === undefined)
 			return alert("Please enter all the details");
+		if (formData.email.trim() === "" || formData.password.trim() === "")
+			return alert("Please enter valid details");
 
 		fetch("https://himalaya-usa.herokuapp.com/users/login", {
 			method: "POST",
