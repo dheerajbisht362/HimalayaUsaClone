@@ -78,22 +78,22 @@ This is a clone of *https://himalayausa.com/* website. It's an USA based E-comme
 ![Home Page](https://github.com/dheerajbisht362/HimalayaUsaFrontEnd/blob/master/frontend/public/hero.jpg)
 
 - Drop Down:
-![Drop Down](https://drive.google.com/file/d/1dau8v78uklI5l1_FOPDvYhdaexpX2wex/view?usp=sharing)
+![Drop Down](https://github.com/dheerajbisht362/HimalayaUsaFrontEnd/tree/master/frontend/public/dropdown.png)
 
 - Product Page:
-![Product Page](https://drive.google.com/file/d/1Y6fKETas6cmtch0ZzW8QmZNf-fu-VHdV/view?usp=sharing)
+![Product Page](https://github.com/dheerajbisht362/HimalayaUsaFrontEnd/tree/master/frontend/public/products.png)
 
 - LogIn Page:
-![Login Page](https://drive.google.com/file/d/1CEHY_UgYjsU3Ej3b1Ycg3RRHVEU-idzs/view?usp=sharing)
+![Login Page](https://github.com/dheerajbisht362/HimalayaUsaFrontEnd/tree/master/frontend/public/login.png)
 
 - SignUp Page:
-![SignUp Page](https://drive.google.com/file/d/1F2B0EyuvjYZaqdW7TNeNTd5ltD06nvuX/view?usp=sharing)
+![SignUp Page](https://github.com/dheerajbisht362/HimalayaUsaFrontEnd/tree/master/frontend/public/signin.png)
 
 - Cart Details Page:
-![Shopping cart](https://drive.google.com/file/d/1jYT0E80osA-8C0srx02OC-dpoHF0gvd-/view?usp=sharing)
+![Shopping cart](https://github.com/dheerajbisht362/HimalayaUsaFrontEnd/tree/master/frontend/public.cart.png)
 
 - Payments Page:
-![Payments Page](https://drive.google.com/file/d/1GY0oGyr6goiRDiAvBiXvYUqDzJVgdbZe/view?usp=sharing)
+![Payments Page](https://github.com/dheerajbisht362/HimalayaUsaFrontEnd/tree/master/frontend/public/payment.png)
 
 
   <hr/>
