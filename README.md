@@ -75,7 +75,7 @@ This is a clone of *https://himalayausa.com/* website. It's an USA based E-comme
 ## Snapshots 📷
 
 - Landing Page (Home Page):
-![Home Page](https://drive.google.com/file/d/17MkYtlORzeGHKDe65UtNlimwMy5MxPdB/view?usp=sharing)
+![Home Page](https://github.com/dheerajbisht362/HimalayaUsaFrontEnd/blob/master/frontend/public/hero.jpg)
 
 - Drop Down:
 ![Drop Down](https://drive.google.com/file/d/1dau8v78uklI5l1_FOPDvYhdaexpX2wex/view?usp=sharing)
