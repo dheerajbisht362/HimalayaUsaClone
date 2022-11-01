@@ -1,6 +1,4 @@
 //config data
-// checking
-
 const {DEFAULT_CONNECTION_STRING, PORT, MONGOOSE_OPTIONS} = require("./config/connectionDb");
 
 //connect to express
@@ -26,8 +24,8 @@ app.listen(PORT, () => console.log(`xyz is connected successfully to Express. Li
 const mongoose = require('mongoose');
 mongoose.connect(DEFAULT_CONNECTION_STRING, MONGOOSE_OPTIONS);
 mongoose.connection.on("error", err => {
-  console.log("Connection Error: xyz could not connect successfully to Mongoose.", err);
+  console.log("Connection Error: Server could not connect successfully to Mongoose.", err);
 });
 mongoose.connection.on("connected", (err, res) => {
-    console.log("xyz connected successfully to Mongoose.");
+    console.log("Server connected, successfully to Mongoose.");
 });
