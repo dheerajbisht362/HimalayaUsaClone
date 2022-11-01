@@ -12,7 +12,7 @@ function Shopbycatg() {
 	const bestSell = async () => {
 		try {
 			const data = await axios.get(
-				"https://himalaya-usa.herokuapp.com/sproducts/",
+				"https://himalaya-usa.herokuapp.com/products/",
 				{
 					params: {
 						_page: 1,

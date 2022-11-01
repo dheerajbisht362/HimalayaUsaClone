@@ -6,16 +6,15 @@ const HOST = "localhost";
 const DATABASE = "himalaya";
 
 //database credentials
-const USERNAME = "himalaya";
-const PASSWORD = "himalaya";
+const USERNAME = "himalayaUsaUser";
+const PASSWORD = "RK1K9w9cDUXGmzoW";
 
 //default app port
 const PORT = 3555;
 
-//default connection url
-const DEFAULT_CONNECTION_STRING = `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.bhghk.mongodb.net/${DATABASE}?retryWrites=true&w=majority`;
-// const DEFAULT_CONNECTION_STRING =  mongodb+srv://himalaya:<password>@cluster0.bhghk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-// //mongoose options for connection
+// mongoose options for connection
+const DEFAULT_CONNECTION_STRING = `mongodb+srv://${USERNAME}:${PASSWORD}@cluster0.mwuf9.mongodb.net/${DATABASE}?retryWrites=true&w=majority`  // dheeraj
+
 const MONGOOSE_OPTIONS = {
     useCreateIndex: true,
     useFindAndModify: false,
