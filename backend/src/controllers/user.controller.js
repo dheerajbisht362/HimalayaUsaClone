@@ -84,6 +84,7 @@ router.patch("/:id", async (request, response) => {
 		response.status(401).send(err.message);
 	}
 });
+
 router.patch("/purchase/:userId", async (request, response) => {
 	try {
 		const results = await User.findByIdAndUpdate(
