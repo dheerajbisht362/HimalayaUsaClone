@@ -58,6 +58,9 @@ router.get("/query/:id", async function (req, res) {
         return res.status(400).send(err.message);
     }
 })
+
+// get products with pagenation
+
 router.get("/page/:numb", async function (req, res) {
     try {
         const page=req.params.numb;
@@ -77,6 +80,9 @@ router.get("/page/:numb", async function (req, res) {
         return res.status(400).send(err.message);
     }
 })
+
+// get products with name
+
 router.get("/pro/:name", async function (req, res) {
     try {
         const getById = await Product.find({type: req.params.name}).lean().exec();
