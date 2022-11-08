@@ -30,9 +30,10 @@ This is a clone of *https://himalayausa.com/* website. It's an USA based E-comme
     - mongoose: ^5.11.15,
     - nodemon: ^2.0.12
     
-    - react
-    - react-router
-
+    - react: "^17.0.2",
+    - react-router-dom : "^5.3.0",
+    - react-icons": "^4.2.0"
+    
 ### Webpages along with its features
 
 - Homepage
