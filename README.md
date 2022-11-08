@@ -29,6 +29,9 @@ This is a clone of *https://himalayausa.com/* website. It's an USA based E-comme
     - moment: ^2.29.1,
     - mongoose: ^5.11.15,
     - nodemon: ^2.0.12
+    
+    - react
+    - react-router
 
 ### Webpages along with its features
 
