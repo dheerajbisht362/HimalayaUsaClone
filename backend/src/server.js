@@ -17,6 +17,13 @@ const userController = require("./controllers/user.controller");
 
 app.use("/products", productController);
 app.use("/users", userController);
+app.get("/", async (request, response) => {
+	try {
+		return response.send("results");
+	} catch (err) {
+		response.status(401).send(err.message);
+	}
+});
 
 app.listen(PORT, () => console.log(`xyz is connected successfully to Express. Listening on port ${PORT}.`));
 
