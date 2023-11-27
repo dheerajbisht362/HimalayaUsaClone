@@ -25,7 +25,7 @@ export default function Navbar() {
 			if (val.length) {
 				axios
 					.get(
-						`https://himalaya-usa.herokuapp.com/products/pro/${val}`
+						`https://himalaya-usa.onrender.com/products/pro/${val}`
 					)
 					.then((res) => res.data)
 					.then((res) => {

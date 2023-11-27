@@ -30,7 +30,7 @@ export default function Signup() {
 		)
 			return alert("Please enter valid the details");
 
-		fetch("https://himalaya-usa.herokuapp.com/users/", {
+		fetch("https://himalaya-usa.onrender.com/users/", {
 			method: "POST",
 			body: JSON.stringify(formData),
 			headers: { "Content-Type": "application/json" },

@@ -15,7 +15,7 @@ export default function UserAccount() {
 
 	function getData() {
 		axios
-			.get(`https://himalaya-usa.herokuapp.com/users/${auth}`)
+			.get(`https://himalaya-usa.onrender.com/users/${auth}`)
 			.then((res) => res.data)
 			.then((res) => setUser(res));
 	}

@@ -18,7 +18,7 @@ export default function LogIn() {
 		if (formData.email.trim() === "" || formData.password.trim() === "")
 			return alert("Please enter valid details");
 
-		fetch("https://himalaya-usa.herokuapp.com/users/login", {
+		fetch("https://himalaya-usa.onrender.com/users/login", {
 			method: "POST",
 			body: JSON.stringify(formData),
 			headers: { "Content-Type": "application/json" },

@@ -34,7 +34,7 @@ export default function PaymentPage() {
 
 		axios
 			.patch(
-				`https://himalaya-usa.herokuapp.com/users/purchase/${auth}`,
+				`https://himalaya-usa.onrender.com/users/purchase/${auth}`,
 				obj
 			)
 			.then((res) => res.data)

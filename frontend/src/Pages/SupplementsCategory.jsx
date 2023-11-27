@@ -24,7 +24,7 @@ export default function SupplementsCategory() {
 	}, [sortAsc, sortName, pageCount, bloodSugar, digestion]);
 	function fetchData() {
 		axios
-			.get("https://himalaya-usa.herokuapp.com/products")
+			.get("https://himalaya-usa.onrender.com/products")
 			.then((res) => res.data)
 			// .then((res) => res.length=pageCount*6)
 			.then((res) => {
